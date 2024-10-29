@@ -1,0 +1,55 @@
+---
+title: "Analisis_Statistik_Iklim"
+author: "LIF ADR"
+date: "`r Sys.Date()`"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+# library
+library("readxl")
+```
+
+```{r}
+# read excel
+data_mgl_1 <- read_excel("/Users/auliadinirafsanjani/Documents/Others/Analisis_LIF_ADR/Hasil_Survei/Rekapitulasi_Survei_Magelang.xlsx", sheet = "main Q", col_names = FALSE)
+data_mgl_2 <- read_excel("/Users/auliadinirafsanjani/Documents/Others/Analisis_LIF_ADR/Hasil_Survei/Rekapitulasi_Survei_Magelang.xlsx", sheet = "Q53&68", col_names = FALSE)
+```
+```{r}
+# transpose data
+trans_mgl1 <- as.data.frame(t(data_mgl_1))
+trans_mgl2 <- as.data.frame(t(data_mgl_2))
+```
+
+```{r}
+# change column name
+colnames(trans_mgl1)[1:249] <- c("ID", "NAMA", "JEKEL", "UMUR", "DIDIK_SD", "DIDIK_SMP", "DIDIK_SMA", "DIDIK_S1", "DIDIK_S2", 
+                                 "KERJA_PETANI", "KERJA_BURUH", "KERJA_KUMPUL", "KERJA_DAGANG", "KERJA_PABRIK", "KERJA_MINUM", "KERJA_EKSPOR",
+                                 "KERJA_ISI", 
+                                 "KERJA_LAIN", "LAMA_PROF", "TINGGAL_DESA", "TINGGAL_KEC", "LOKASI_DESA", "LOKASI_KEC", 
+                                 "TANGGUNG_PAS", "TANGGUNG_LK", "TANGGUNG_PR", "TOT_ANAK", "TOT_LK", "TOT_PR", 
+                                 "INCOME1", "CUKUP1", "INCOME_LUAR", "NILAI_LUAR", "BUTUH1", "KONSUMSI1", "MILIK1", "SEWA1", "LUAS_LAHAN", 
+                                 "VAR_ROB", "VAR_ARAB", "VAR_TUGU", "VAR_AYU", "VAR_LAIN", 
+                                 "PROD_TAH", "PROD_BUL", "TK_TANI", "TK_COST", 
+                                 "LAHAN_DR", "LAHAN_DT", "LAHAN_BKT", "LAHAN_LER", 
+                                 "PUK_ORG", "PUK_CAIR", "IRIGASI1", "MULSA", "KREDIT", "JUAL1", "SELISIH1", "JUAL_SEMUA", "STABIL", "JATUH", 
+                                 "INC_BERSIH", "KERING", "KAPAN_KERING", "SERING_KERING", "PULUH_KERING", "BENCANA", 
+                                 "SUHU_SAM", "SUHU_DINGIN", "SUHU_PANAS", "SUHU_TT", "SULIT AIR", "DENGAR_KERING", 
+                                 "DAM1_AIR", "DAM1_LINK", "DAM1_LAPAR", "DAM1_GAGAL", "DAM1_MATI", "DAM1_TERNAK", "DAM1_MANU",
+                                 "DAM1_GIZI", "DAM1_HARGA", "DAM1_TURUN", "DAM1_LAIN", 
+                                 "DAM2_PANEN", "DAM2_PROD", "DAM2_HAMA", "DAM2_KUAL", "DAM2_HARGA", "DAM2_LAHAN", "DAM2_INCOME", "DAM2_LAIN", 
+                                 "PINJAMAN1", "BLT", "HAJAT", 
+                                 "MT_KAL", "MT_AIR", "MT_IRIG", "MT_AIR", "MT_KHUSUS", "MT_MULSA", "MT_BIAR", "MT_ASURAN", "COL_REMOV", 
+                                 "HUJ_EKS", "HUJ_KAP", "HUJ_SERING", "HUJ_SEPUL", "EKSTRIM1", 
+                                 "INT_SAMA", "INT_TINGGI", "INT_RENDAH", "INT_TT", 
+                                 "BANJIR1", "EKS_DENGAR", "DAM3_BANJIR", "DAM3_LONGSOR", "DAM3_BANDANG", "DAM3_GAGAL", "DAM3_MATI", "DAM3_BURUK",
+                                 "DAM3_MANU", "DAM3_HARGA", "DAM3_INFRA", "DAM3_LAIN", 
+                                 "DAM4_GAGAL", "DAM4_KURANG", "DAM4_HAMA", "DAM4_KUAL", "DAM4_HARGA", "DAM4_RUSAK", "DAM4_INCOME", "DAM4_LAIN",
+                                 #mulai V134
+                                 )
+```
+
